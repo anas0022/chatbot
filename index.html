@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yogloans Chatbot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary-color: #64748b;
+      --accent-color: #f59e0b;
+      --bg-color: #f8fafc;
+      --text-color: #1e293b;
+      --chat-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #3b82f6;
+      --primary-light: #60a5fa;
+      --secondary-color: #94a3b8;
+      --accent-color: #fbbf24;
+      --bg-color: #0f172a;
+      --text-color: #f1f5f9;
+      --chat-bg: #1e293b;
+      --border-color: #334155;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+      color: var(--text-color);
+    }
+
+    #chatbox {
+      max-width: 480px;
+      width: 100%;
+      max-height: 80vh;
+      background: var(--chat-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: var(--primary-color);
+      color: white;
+      padding: 24px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-content h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .header-content p {
+      font-size: 14px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .theme-toggle {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.25);
+      transform: scale(1.05);
+    }
+
+    .status-indicator {
+      position: absolute;
+      top: 24px;
+      right: 80px;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: var(--chat-bg);
+      min-height: 0;
+    }
+
+    .message {
+      margin: 12px 0;
+      animation: fadeInUp 0.3s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bot {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .bot-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .bot-message {
+      background: var(--bg-color);
+      color: var(--text-color);
+      padding: 12px 16px;
+      border-radius: 12px 12px 12px 4px;
+      max-width: 85%;
+      word-wrap: break-word;
+      line-height: 1.5;
+      font-size: 14px;
+      border: 1px solid var(--border-color);
+    }
+
+    .user {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .user-message {
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 12px 12px 4px 12px;
+      max-width: 85%;
+      word-wrap: break-word;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--secondary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .input-container {
+      padding: 20px;
+      background: var(--chat-bg);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    #userInput {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+      background: var(--chat-bg);
+      color: var(--text-color);
+    }
+
+    #userInput:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    #sendBtn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #sendBtn:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    #sendBtn:active {
+      transform: translateY(0);
+    }
+
+    /* Typing indicator */
+    .typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+      animation: fadeInUp 0.3s ease-out;
+    }
+
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+      padding: 8px 12px;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      animation: typingBounce 1.4s infinite ease-in-out both;
+    }
+
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    .typing-dot:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes typingBounce {
+      0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.4;
+      }
+      40% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    /* Message reactions */
+    .message-reactions {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+      justify-content: flex-end;
+    }
+
+    .reaction-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-size: 12px;
+      color: var(--secondary-color);
+    }
+
+    .reaction-btn:hover {
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary-color);
+    }
+
+    /* Scrollbar Styling */
+    #messages::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    #messages::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    #messages::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 2px;
+    }
+
+    #messages::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      #chatbox {
+        margin: 10px;
+        border-radius: 12px;
+        max-height: 90vh;
+      }
+      
+      .chat-header {
+        padding: 20px;
+      }
+      
+      .header-content h2 {
+        font-size: 18px;
+      }
+      
+      #messages {
+        padding: 16px;
+      }
+      
+      .input-container {
+        padding: 16px;
+      }
+    }
+
+    /* Loader Styles */
+    .loader-container {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+      animation: fadeInUp 0.3s ease-out;
+    }
+
+    .loader {
+      display: flex;
+      gap: 4px;
+    }
+
+    .loader-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      animation: loaderBounce 1.4s infinite ease-in-out both;
+    }
+
+    .loader-dot:nth-child(1) { animation-delay: -0.32s; }
+    .loader-dot:nth-child(2) { animation-delay: -0.16s; }
+    .loader-dot:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes loaderBounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+      }
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .loader-text {
+      color: var(--secondary-color);
+      font-size: 13px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div id="chatbox">
+  <div class="chat-header">
+    <div class="header-content">
+      <h2>Yogloans Assistant</h2>
+      <p>Your personal loan advisor</p>
+    </div>
+    <div class="status-indicator"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <div id="messages"></div>
+  
+  <div class="input-container">
+    <input type="text" id="userInput" placeholder="Ask me about loans..." />
+    <button id="sendBtn" onclick="handleUserMessage()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script src="chatbot.js"></script>
+
+</body>
+</html>
