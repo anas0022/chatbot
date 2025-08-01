@@ -193,7 +193,7 @@
         "loans you provide",
         "loans you give"
       ],
-      "response": "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?"
+      "response": "We offer various loan types including business loans, gold loans, CD loans, vehicle loans. Which type interests you?"
     },
     {
       "tag": "interest_rate_cd",
