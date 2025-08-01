@@ -64,20 +64,24 @@ function findBestResponse(input) {
   let bestIntent = null;
   let maxScore = 0;
 
-  // Split input into words for better matching
   const inputWords = input.split(/\s+/);
-  
+
   for (const intent of knowledge.intents) {
     let score = 0;
-    
+
     for (const keyword of intent.keywords) {
       const keywordLower = keyword.toLowerCase();
-      
-      // Exact match
-      if (input.includes(keywordLower)) {
+
+      // Exact full phrase match
+      if (input === keywordLower) {
+        score += 5;
+      }
+
+      // Partial phrase match
+      else if (input.includes(keywordLower)) {
         score += 3;
       }
-      
+
       // Word-by-word matching
       const keywordWords = keywordLower.split(/\s+/);
       for (const inputWord of inputWords) {
@@ -86,48 +90,32 @@ function findBestResponse(input) {
           if (inputWord === keywordWord) {
             score += 2;
           }
-          // Partial word match (for typos and variations)
-          else if (inputWord.includes(keywordWord) || keywordWord.includes(inputWord)) {
-            score += 1;
-          }
-          // Handle common variations
+          // Allow only if both words are at least 4 characters and partially match
           else if (
-            (inputWord === 'loans' && keywordWord === 'loan') ||
-            (inputWord === 'loan' && keywordWord === 'loans') ||
-            (inputWord === 'offer' && keywordWord === 'offers') ||
-            (inputWord === 'offers' && keywordWord === 'offer') ||
-            (inputWord === 'type' && keywordWord === 'types') ||
-            (inputWord === 'types' && keywordWord === 'type') ||
-            (inputWord === 'what' && keywordWord === 'which') ||
-            (inputWord === 'which' && keywordWord === 'what')
+            inputWord.length >= 4 &&
+            keywordWord.length >= 4 &&
+            (inputWord.includes(keywordWord) || keywordWord.includes(inputWord))
           ) {
             score += 1;
           }
         }
       }
     }
-    
+
     if (score > maxScore) {
       maxScore = score;
       bestIntent = intent;
     }
   }
 
-  // If no good match found, try to guess based on common words
-  if (maxScore === 0) {
-    if (input.includes('loan') || input.includes('loans')) {
-      return "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?";
-    }
-    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-      return "Hello! Welcome to our banking services. How can I help you today with your loan queries?";
-    }
-    if (input.includes('bye') || input.includes('goodbye') || input.includes('thank')) {
-      return "Thank you for chatting with us! Have a great day. Feel free to return if you have more questions.";
-    }
+  // Only reply if score crosses a threshold (e.g. 4+)
+  if (maxScore >= 4 && bestIntent) {
+    return bestIntent.response;
+  } else {
+    return "I'm sorry, I couldn't understand that. Please ask a question related to loans, documents, or application process.";
   }
-
-  return bestIntent ? bestIntent.response : "I'm sorry, I couldn't understand that. Please try rephrasing your question about loans, EMI, documents, or any other banking services.";
 }
+
 
 function addUserMessage(text) {
   const msgBox = document.getElementById("messages");
