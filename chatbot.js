@@ -603,75 +603,7 @@ function handleUserMessage() {
   }, 300); // Small delay before showing typing indicator
 }
 
-function findBestResponse(input) {
-  input = input.toLowerCase().trim();
-  let bestIntent = null;
-  let maxScore = 0;
 
-  // Split input into words for better matching
-  const inputWords = input.split(/\s+/);
-  
-  for (const intent of knowledge.intents) {
-    let score = 0;
-    
-    for (const keyword of intent.keywords) {
-      const keywordLower = keyword.toLowerCase();
-      
-      // Exact match
-      if (input.includes(keywordLower)) {
-        score += 3;
-      }
-      
-      // Word-by-word matching
-      const keywordWords = keywordLower.split(/\s+/);
-      for (const inputWord of inputWords) {
-        for (const keywordWord of keywordWords) {
-          // Exact word match
-          if (inputWord === keywordWord) {
-            score += 2;
-          }
-          // Partial word match (for typos and variations)
-          else if (inputWord.includes(keywordWord) || keywordWord.includes(inputWord)) {
-            score += 1;
-          }
-          // Handle common variations
-          else if (
-            (inputWord === 'loans' && keywordWord === 'loan') ||
-            (inputWord === 'loan' && keywordWord === 'loans') ||
-            (inputWord === 'offer' && keywordWord === 'offers') ||
-            (inputWord === 'offers' && keywordWord === 'offer') ||
-            (inputWord === 'type' && keywordWord === 'types') ||
-            (inputWord === 'types' && keywordWord === 'type') ||
-            (inputWord === 'what' && keywordWord === 'which') ||
-            (inputWord === 'which' && keywordWord === 'what')
-          ) {
-            score += 1;
-          }
-        }
-      }
-    }
-    
-    if (score > maxScore) {
-      maxScore = score;
-      bestIntent = intent;
-    }
-  }
-
-  // If no good match found, try to guess based on common words
-  if (maxScore === 0) {
-    if (input.includes('loan') || input.includes('loans')) {
-      return "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?";
-    }
-    if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-      return "Hello! Welcome to our banking services. How can I help you today with your loan queries?";
-    }
-    if (input.includes('bye') || input.includes('goodbye') || input.includes('thank')) {
-      return "Thank you for chatting with us! Have a great day. Feel free to return if you have more questions.";
-    }
-  }
-
-  return bestIntent ? bestIntent.response : "I'm sorry, I couldn't understand that. Please try rephrasing your question about loans, EMI, documents, or any other banking services.";
-}
 
 function addUserMessage(text) {
   const msgBox = document.getElementById("messages");
