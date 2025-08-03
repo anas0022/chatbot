@@ -31,7 +31,36 @@
         "talk",
         "speak"
       ],
-      "response": "Hello! Welcome to our banking services. How can I help you today with your loan queries?"
+      "response": "Hello! Welcome to our banking services. How can I help you today with your loan queries?",
+      "refined_keywords": [
+        "hey there",
+        "hey",
+        "speak",
+        "greeting",
+        "evening",
+        "yo",
+        "greetings",
+        "start",
+        "good morning",
+        "welcome",
+        "hello",
+        "begin",
+        "hi there",
+        "good afternoon",
+        "what's up",
+        "hi",
+        "hiya",
+        "hello there",
+        "afternoon",
+        "morning",
+        "chat",
+        "talk",
+        "hallo",
+        "sup",
+        "howdy",
+        "good evening",
+        "good day"
+      ]
     },
     {
       "tag": "goodbye",
@@ -39,14 +68,11 @@
         "bye",
         "goodbye",
         "see you",
-        "thank you",
-        "thanks",
         "that's all",
         "end",
         "exit",
         "quit",
         "close",
-        "goodbye",
         "see you later",
         "bye bye",
         "take care",
@@ -66,7 +92,35 @@
         "sign off",
         "log out"
       ],
-      "response": "Thank you for chatting with us! Have a great day. Feel free to return if you have more questions."
+      "response": "Thank you for chatting with us! Have a great day. Feel free to return if you have more questions.",
+      "refined_keywords": [
+        "finish",
+        "bye",
+        "sign off",
+        "end",
+        "over",
+        "adios",
+        "see",
+        "exit",
+        "bye bye",
+        "goodbye",
+        "good night",
+        "see later",
+        "ciao",
+        "disconnect",
+        "stop",
+        "close",
+        "night",
+        "farewell",
+        "terminate",
+        "complete",
+        "end chat",
+        "take care",
+        "quit",
+        "log out",
+        "done",
+        "that's all"
+      ]
     },
     {
       "tag": "thanks",
@@ -92,7 +146,25 @@
         "appreciate the help",
         "thank you for support"
       ],
-      "response": "You're welcome! Is there anything else I can help you with regarding our loan services?"
+      "response": "You're welcome! Is there anything else I can help you with regarding our loan services?",
+      "refined_keywords": [
+        "grateful",
+        "appreciate it",
+        "thank information",
+        "thanks lot",
+        "thanks bunch",
+        "appreciate",
+        "thank support",
+        "thank very much",
+        "thanks again",
+        "thank assistance",
+        "thank so much",
+        "thank kindly",
+        "thanks",
+        "many thanks",
+        "thank",
+        "thanks info"
+      ]
     },
     {
       "tag": "help",
@@ -125,11 +197,32 @@
         "guide",
         "support me"
       ],
-      "response": "I can help you with loan information, application processes, EMI details, document requirements, and more. Just ask me anything about our loan services!"
+      "response": "I can help you with loan information, application processes, EMI details, document requirements, and more. Just ask me anything about our loan services!",
+      "refined_keywords": [
+        "guide",
+        "offered",
+        "ask",
+        "information",
+        "guidance",
+        "features",
+        "provide",
+        "work",
+        "assistance",
+        "customer support",
+        "assist",
+        "desk",
+        "support",
+        "tell",
+        "should know",
+        "options",
+        "capabilities"
+      ]
     },
     {
       "tag": "loan_types",
       "keywords": [
+        "loan",
+        "loan",
         "loan types",
         "types of loans",
         "what loans",
@@ -142,9 +235,7 @@
         "loan options",
         "available loans",
         "loan varieties",
-        "loan",
         "loan schemes",
-        "loans",
         "loan programs",
         "loan offerings",
         "loan services",
@@ -170,36 +261,36 @@
         "loan services available",
         "loans you offer",
         "loans you have",
-        "loans available",
-        "what loans do you have",
-        "loans you provide",
-        "loans you give",
-        "loans you offer",
-        "loans you have",
-        "loans available",
-        "what loans do you have",
-        "loans you provide",
-        "loans you give",
-        "loans you offer",
-        "loans you have",
-        "loans available",
-        "what loans do you have",
-        "loans you provide",
-        "loans you give",
-        "loans you offer",
-        "loans you have",
-        "loans available",
-        "what loans do you have",
         "loans you provide",
         "loans you give"
       ],
-      "response": "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?"
+      "response": "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?",
+      "refined_keywords": [
+        "types",
+        "options",
+        "schemes",
+        "products",
+        "varieties",
+        "loans",
+        "types offered",
+        "programs provide",
+        "products offered",
+        "different loans",
+        "loans give",
+        "loans provide",
+        "types loans",
+        "programs",
+        "kind loans",
+        "programs offered",
+        "varieties offered",
+        "categories",
+        "offerings"
+      ]
     },
     {
       "tag": "interest_rate_cd",
       "keywords": [
         "interest rate",
-        "cd loan",
         "cd loan interest",
         "certificate of deposit loan",
         "cd interest rate",
@@ -222,32 +313,36 @@
         "cd loan interest details",
         "cd loan interest information",
         "cd loan interest rates",
-        "cd loan interest charges",
-        "cd loan interest cost",
-        "cd loan interest amount",
-        "cd loan interest calculation",
-        "cd loan interest formula",
-        "cd loan interest structure",
-        "cd loan interest details",
-        "cd loan interest information",
-        "cd loan interest rates",
-        "cd loan interest charges",
-        "cd loan interest cost",
-        "cd loan interest amount",
-        "cd loan interest calculation",
-        "cd loan interest formula",
-        "cd loan interest structure",
-        "cd loan interest details",
-        "cd loan interest information",
-        "cd",
         "home applianse"
       ],
-      "response": "Our CD loan interest rates vary based on the certificate amount and tenure. Please contact us for the latest rates and current offers."
+      "response": "Our CD loan interest rates vary based on the certificate amount and tenure. Please contact us for the latest rates and current offers.",
+      "refined_keywords": [
+        "cd rate interest",
+        "cd interest amount",
+        "cd interest percentage",
+        "cd interest",
+        "cd interest structure",
+        "cd interest rate",
+        "cd percentage",
+        "certificate deposit",
+        "cd interest charges",
+        "cd interest formula",
+        "certificate deposit interest",
+        "cd interest cost",
+        "interest cd",
+        "interest rate",
+        "rate interest cd",
+        "cd interest calculation",
+        "cd interest information",
+        "cd interest rates",
+        "cd rate",
+        "home applianse",
+        "cd charges"
+      ]
     },
     {
       "tag": "apply_business_loan",
       "keywords": [
-        "apply",
         "business loan",
         "get a business loan",
         "apply for business loan",
@@ -274,21 +369,14 @@
         "business loan application procedure",
         "apply business loan online procedure",
         "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
-        "apply business loan online procedure",
-        "business loan application online process",
         "apply business loan online procedure"
       ],
-      "response": "You can apply for a business loan through our website, mobile app, or by visiting your nearest branch. Our team will guide you through the entire process."
+      "response": "You can apply for a business loan through our website, mobile app, or by visiting your nearest branch. Our team will guide you through the entire process.",
+      "refined_keywords": [
+        "business",
+        "start business",
+        "business procedure"
+      ]
     },
     {
       "tag": "gold_loan_requirements",
@@ -307,35 +395,21 @@
         "gold loan application process",
         "gold loan application procedure",
         "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure",
-        "gold loan application form",
-        "gold loan application online",
-        "gold loan application process",
-        "gold loan application procedure"
+        "gold loan application online"
       ],
-      "response": "Yes, we provide gold loans. You'll need valid ID proof, address proof, and gold items to pledge. The loan amount depends on the gold value and purity."
+      "response": "Yes, we provide gold loans. You'll need valid ID proof, address proof, and gold items to pledge. The loan amount depends on the gold value and purity.",
+      "refined_keywords": [
+        "gold conditions",
+        "gold terms",
+        "provide gold",
+        "gold",
+        "gold eligibility",
+        "gold criteria",
+        "gold procedure",
+        "requirements gold",
+        "gold requirements",
+        "gold documents"
+      ]
     },
     {
       "tag": "loan_tenure",
@@ -352,7 +426,20 @@
         "loan repayment period",
         "loan duration limit"
       ],
-      "response": "The maximum tenure for our loans depends on the loan type. Business loans can go up to 10 years, while personal loans typically have shorter terms. Contact us for specific details."
+      "response": "The maximum tenure for our loans depends on the loan type. Business loans can go up to 10 years, while personal loans typically have shorter terms. Contact us for specific details.",
+      "refined_keywords": [
+        "maximum period",
+        "duration",
+        "repayment period",
+        "tenure",
+        "time period",
+        "long",
+        "maximum tenure",
+        "term",
+        "period",
+        "many years",
+        "duration limit"
+      ]
     },
     {
       "tag": "self_employed_eligibility",
@@ -369,7 +456,19 @@
         "freelancer loan",
         "consultant loan"
       ],
-      "response": "Yes, self-employed individuals are eligible for loans, subject to income verification and business documentation. We have special products for business owners."
+      "response": "Yes, self-employed individuals are eligible for loans, subject to income verification and business documentation. We have special products for business owners.",
+      "refined_keywords": [
+        "eligibility",
+        "self employed business",
+        "consultant",
+        "entrepreneur",
+        "self employed eligible",
+        "freelancer",
+        "self employed",
+        "eligible",
+        "business self employed",
+        "business owner"
+      ]
     },
     {
       "tag": "required_documents",
@@ -388,37 +487,19 @@
         "loan application documents required",
         "loan application documents needed",
         "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
-        "loan application documents checklist",
-        "loan application documents required",
-        "loan application documents needed",
-        "loan application documents list",
         "loan application documents checklist"
       ],
-      "response": "Typically required documents include ID proof (Aadhaar/PAN), address proof, income proof, bank statements, and business documents for business loans."
+      "response": "Typically required documents include ID proof (Aadhaar/PAN), address proof, income proof, bank statements, and business documents for business loans.",
+      "refined_keywords": [
+        "documents",
+        "documentation",
+        "documents needed",
+        "paperwork",
+        "documents list",
+        "documents checklist",
+        "approval docs",
+        "file documents"
+      ]
     },
     {
       "tag": "credit_score",
@@ -435,7 +516,18 @@
         "credit score check",
         "credit score report"
       ],
-      "response": "A credit score report is generally required, but some products may allow exceptions. A good credit score (750+) improves your loan approval chances."
+      "response": "A credit score report is generally required, but some products may allow exceptions. A good credit score (750+) improves your loan approval chances.",
+      "refined_keywords": [
+        "credit report",
+        "credit score minimum",
+        "credit history",
+        "credit score",
+        "credit score report",
+        "without credit",
+        "credit rating",
+        "score report",
+        "credit"
+      ]
     },
     {
       "tag": "pan_card_required",
@@ -450,7 +542,16 @@
         "pan card must",
         "pan card requirement"
       ],
-      "response": "Yes, having a PAN card is mandatory for most of our loan products as per regulatory requirements."
+      "response": "Yes, having a PAN card is mandatory for most of our loan products as per regulatory requirements.",
+      "refined_keywords": [
+        "pan card needed",
+        "pan mandatory",
+        "pan card requirement",
+        "pan card essential",
+        "pan compulsory",
+        "pan card must",
+        "pan card"
+      ]
     },
     {
       "tag": "emi_schedule",
@@ -476,27 +577,29 @@
         "emi schedule check mobile",
         "emi schedule check app",
         "emi schedule check portal",
-        "emi schedule check website",
-        "emi schedule check online portal",
-        "emi schedule check mobile app",
-        "emi schedule check website portal",
-        "emi schedule check online mobile",
-        "emi schedule check app portal",
-        "emi schedule check website mobile",
-        "emi schedule check online app",
-        "emi schedule check mobile website",
-        "emi schedule check portal app",
-        "emi schedule check online website",
-        "emi schedule check mobile portal",
-        "emi schedule check app website",
-        "emi schedule check portal mobile",
-        "emi schedule check website app",
-        "emi schedule check online portal mobile",
-        "emi schedule check mobile app website",
-        "emi schedule check website portal app",
-        "emi schedule check online mobile app"
+        "emi schedule check website"
       ],
-      "response": "You can check your EMI schedule by logging into your customer portal or mobile app. You'll see the complete repayment breakdown there."
+      "response": "You can check your EMI schedule by logging into your customer portal or mobile app. You'll see the complete repayment breakdown there.",
+      "refined_keywords": [
+        "emi breakdown",
+        "monthly emi",
+        "emi schedule",
+        "emi plan",
+        "emi schedule breakdown",
+        "emi schedule website",
+        "emi schedule statement",
+        "emi schedule portal",
+        "emi schedule app",
+        "emi statement",
+        "repayment schedule",
+        "emi schedule calculation",
+        "emi schedule plan",
+        "emi schedule information",
+        "emi schedule mobile",
+        "emi calculation",
+        "emi",
+        "repayment plan"
+      ]
     },
     {
       "tag": "missed_emi",
@@ -513,7 +616,20 @@
         "emi penalty",
         "late emi"
       ],
-      "response": "Missing EMI payments may attract penalties and affect your credit score. Please contact support immediately to discuss payment options."
+      "response": "Missing EMI payments may attract penalties and affect your credit score. Please contact support immediately to discuss payment options.",
+      "refined_keywords": [
+        "emi overdue",
+        "emi penalty",
+        "missed emi",
+        "missed emi payment",
+        "late emi payment",
+        "if miss",
+        "missed payment",
+        "late payment",
+        "emi default",
+        "late emi",
+        "emi late"
+      ]
     },
     {
       "tag": "pay_emi_online",
@@ -531,34 +647,23 @@
         "pay emi online portal",
         "pay emi online app",
         "pay emi online website",
-        "pay emi online mobile",
-        "pay emi online portal app",
-        "pay emi online mobile websiteortal",
-        "pay emi online app website",
-        "pay emi online portal mobile",
-        "pay emi online website app",
-        "pay emi online mobile portal",
-        "pay emi online app portal",
-        "pay emi online website mobile",
-        "pay emi online portal website",
-        "pay emi online mobile app",
-        "pay emi online app mobile",
-        "pay emi online website portal",
-        "pay emi online portal app mobile",
-        "pay emi online mobile app website",
-        "pay emi online website portal app",
-        "pay emi online portal mobile app",
-        "pay emi online app website mobile",
-        "pay emi online mobile website app",
-        "pay emi online portal app website",
-        "pay emi online website mobile app",
-        "pay emi online app portal mobile",
-        "pay emi online mobile portal app",
-        "pay emi online website app mobile",
-        "pay emi online portal mobile website",
-        "pay emi online app website portal"
+        "pay emi online mobile"
       ],
-      "response": "Yes, you can pay your EMI online through our customer portal, mobile app, or internet banking. We also accept UPI and other digital payment methods."
+      "response": "Yes, you can pay your EMI online through our customer portal, mobile app, or internet banking. We also accept UPI and other digital payment methods.",
+      "refined_keywords": [
+        "pay emi mobile",
+        "emi payment method",
+        "pay emi",
+        "pay emi digitally",
+        "pay emi app",
+        "repay",
+        "digital emi payment",
+        "emi payment",
+        "pay emi portal",
+        "emi",
+        "repayment",
+        "pay emi website"
+      ]
     },
     {
       "tag": "prepayment_penalty",
@@ -575,7 +680,20 @@
         "early settlement",
         "prepayment terms"
       ],
-      "response": "Some loans have prepayment penalties. Please check your loan agreement or contact us to know the specific terms for your loan type."
+      "response": "Some loans have prepayment penalties. Please check your loan agreement or contact us to know the specific terms for your loan type.",
+      "refined_keywords": [
+        "prepayment penalty",
+        "early closure",
+        "early settlement",
+        "prepay",
+        "early repayment",
+        "prepayment terms",
+        "early payment",
+        "pay early",
+        "prepayment charges",
+        "penalty",
+        "prepayment fee"
+      ]
     },
     {
       "tag": "update_contact",
@@ -591,7 +709,19 @@
         "update contact info",
         "contact details change"
       ],
-      "response": "You can update your contact details by visiting the branch, logging into your account, or calling our customer care. Please carry valid ID proof."
+      "response": "You can update your contact details by visiting the branch, logging into your account, or calling our customer care. Please carry valid ID proof.",
+      "refined_keywords": [
+        "change phone",
+        "change contact",
+        "contact change",
+        "update contact",
+        "update email",
+        "update contact info",
+        "change email",
+        "modify contact",
+        "change mobile",
+        "update phone"
+      ]
     },
     {
       "tag": "check_balance",
@@ -607,7 +737,15 @@
         "loan amount remaining",
         "outstanding balance"
       ],
-      "response": "You can check your outstanding loan balance in your customer dashboard, mobile app, or by calling our customer care number."
+      "response": "You can check your outstanding loan balance in your customer dashboard, mobile app, or by calling our customer care number.",
+      "refined_keywords": [
+        "outstanding balance",
+        "amount remaining",
+        "balance",
+        "remaining amount",
+        "outstanding amount",
+        "outstanding"
+      ]
     },
     {
       "tag": "forgot_customer_id",
@@ -623,7 +761,19 @@
         "customer id help",
         "recover customer id"
       ],
-      "response": "Please contact our support team with your registered mobile number or email. We'll help you recover your customer ID securely."
+      "response": "Please contact our support team with your registered mobile number or email. We'll help you recover your customer ID securely.",
+      "refined_keywords": [
+        "id",
+        "lost customer",
+        "forgot customer id",
+        "customer id forgot",
+        "customer id recovery",
+        "customer id",
+        "recover customer id",
+        "lost customer id",
+        "forgot customer",
+        "lost id"
+      ]
     },
     {
       "tag": "raise_complaint",
@@ -639,7 +789,19 @@
         "customer complaint",
         "service complaint"
       ],
-      "response": "You can raise a complaint by calling support, using the complaint section on our website, or visiting any branch. We'll resolve it within 48 hours."
+      "response": "You can raise a complaint by calling support, using the complaint section on our website, or visiting any branch. We'll resolve it within 48 hours.",
+      "refined_keywords": [
+        "raise complaint",
+        "submit complaint",
+        "register complaint",
+        "submit grievance",
+        "customer complaint",
+        "file complaint",
+        "desk",
+        "complaint portal",
+        "complaint",
+        "service complaint"
+      ]
     },
     {
       "tag": "loan_offers",
@@ -656,7 +818,17 @@
         "loan deals",
         "special deals"
       ],
-      "response": "Yes, we often run promotional offers on processing fees and interest rates. Check our website or contact us for current deals and offers."
+      "response": "Yes, we often run promotional offers on processing fees and interest rates. Check our website or contact us for current deals and offers.",
+      "refined_keywords": [
+        "deals",
+        "promotions",
+        "special offers",
+        "discounts",
+        "promotional offers",
+        "special deals",
+        "offers",
+        "current offers"
+      ]
     },
     {
       "tag": "special_loans",
@@ -672,7 +844,18 @@
         "special schemes",
         "women empowerment loan"
       ],
-      "response": "Yes, we have special loan products for women entrepreneurs and senior citizens with attractive interest rates and flexible terms."
+      "response": "Yes, we have special loan products for women entrepreneurs and senior citizens with attractive interest rates and flexible terms.",
+      "refined_keywords": [
+        "women empowerment",
+        "women entrepreneur",
+        "senior citizen special",
+        "women",
+        "special schemes",
+        "special category loans",
+        "loans women",
+        "special loans",
+        "senior citizen"
+      ]
     },
     {
       "tag": "nearest_branch",
@@ -688,7 +871,19 @@
         "branch directory",
         "branch locator"
       ],
-      "response": "You can find the nearest branches and all branch details on our contact page. <button onclick=\"window.open('https://yogloans.com/contact', '_blank')\" style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer; margin-top: 8px; font-size: 12px; transition: transform 0.2s ease;\">Visit Contact Page</button>"
+      "response": "You can find the nearest branches and all branch details on our contact page. <button onclick=\"window.open('https://yogloans.com/contact', '_blank')\" style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer; margin-top: 8px; font-size: 12px; transition: transform 0.2s ease;\">Visit Contact Page</button>",
+      "refined_keywords": [
+        "branch finder",
+        "branch directory",
+        "where branch",
+        "find branch",
+        "branch location",
+        "locate branch",
+        "nearest branch",
+        "branch locator",
+        "branch address",
+        "branch near"
+      ]
     },
     {
       "tag": "customer_care",
@@ -704,43 +899,34 @@
         "support hours",
         "customer care number",
         "customer care contact",
-        "customer care number",
         "customer care helpline",
         "customer care support",
         "customer care service",
         "customer care contact number",
         "customer care helpline number",
         "customer care support number",
-        "customer care service number",
-        "customer care contact helpline",
-        "customer care helpline contact",
-        "customer care support contact",
-        "customer care service contact",
-        "customer care number contact",
-        "customer care helpline number contact",
-        "customer care support number contact",
-        "customer care service number contact",
-        "customer care contact number helpline",
-        "customer care helpline contact number",
-        "customer care support contact number",
-        "customer care service contact number",
-        "customer care number helpline contact",
-        "customer care helpline number support",
-        "customer care support number service",
-        "customer care service number helpline",
-        "customer care contact helpline number",
-        "customer care helpline contact support",
-        "customer care support contact service",
-        "customer care service contact helpline",
-        "customer care number contact helpline",
-        "customer care helpline number contact service"
+        "customer care service number"
       ],
-      "response": "Our customer care is available Monday to Saturday from 9 AM to 6 PM. You can also reach us through our 24/7 toll-free number."
+      "response": "Our customer care is available Monday to Saturday from 9 AM to 6 PM. You can also reach us through our 24/7 toll-free number.",
+      "refined_keywords": [
+        "customer care",
+        "customer care helpline",
+        "customer care support",
+        "helpline",
+        "support hours",
+        "customer support",
+        "customer service",
+        "support timings",
+        "support",
+        "contact support",
+        "customer care contact",
+        "customer care service",
+        "working hours"
+      ]
     },
     {
       "tag": "cd_loan_home_appliance",
       "keywords": [
-        "cd loan",
         "certificate of deposit loan",
         "home appliance loan",
         "appliance loan",
@@ -760,30 +946,110 @@
         "appliance cd",
         "cd loan for home appliance",
         "home appliance certificate loan",
-        "appliance certificate loan",
-        "cd loan home appliance",
-        "home appliance loan cd",
-        "appliance loan cd",
-        "cd loan for appliances",
-        "home appliance certificate of deposit",
-        "appliance certificate of deposit",
-        "cd loan appliance",
-        "home appliance cd",
-        "appliance cd",
-        "cd loan for home appliance",
-        "home appliance certificate loan",
-        "appliance certificate loan",
-        "cd loan home appliance",
-        "home appliance loan cd",
-        "appliance loan cd",
-        "cd loan for appliances",
-        "home appliance certificate of deposit",
-        "appliance certificate of deposit",
-        "cd loan appliance",
-        "home appliance cd",
-        "appliance cd"
+        "appliance certificate loan"
       ],
-      "response": "Yes, we offer CD loans for home appliances. This is a certificate of deposit-based loan that allows you to purchase home appliances using your CD as collateral. The loan amount depends on your CD value and tenure. Contact us for current rates and terms."
+      "response": "Yes, we offer CD loans for home appliances. This is a certificate of deposit-based loan that allows you to purchase home appliances using your CD as collateral. The loan amount depends on your CD value and tenure. Contact us for current rates and terms.",
+      "refined_keywords": [
+        "appliance cd",
+        "appliance",
+        "home appliance",
+        "home appliance certificate",
+        "cd appliance",
+        "cd home appliances",
+        "home appliance certificate deposit",
+        "appliance certificate deposit",
+        "home appliance cd",
+        "cd appliances",
+        "cd home appliance",
+        "appliance certificate",
+        "certificate deposit"
+      ]
+    },
+    {
+      "tag": "vehicle_loan",
+      "keywords": [
+        "vehicle loan",
+        "bike loan",
+        "two wheeler loan",
+        "motorcycle loan",
+        "scooter loan",
+        "bike financing",
+        "two wheeler financing",
+        "motorcycle financing",
+        "scooter financing",
+        "vehicle loan requirements",
+        "bike loan requirements",
+        "two wheeler loan requirements",
+        "motorcycle loan requirements",
+        "scooter loan requirements",
+        "vehicle loan documents",
+        "bike loan documents",
+        "two wheeler loan documents",
+        "motorcycle loan documents",
+        "scooter loan documents",
+        "vehicle loan eligibility",
+        "bike loan eligibility",
+        "two wheeler loan eligibility",
+        "motorcycle loan eligibility",
+        "scooter loan eligibility",
+        "vehicle loan process",
+        "bike loan process",
+        "two wheeler loan process",
+        "motorcycle loan process",
+        "scooter loan process",
+        "vehicle loan application",
+        "bike loan application",
+        "two wheeler loan application",
+        "motorcycle loan application",
+        "scooter loan application",
+        "vehicle loan interest rate",
+        "bike loan interest rate",
+        "two wheeler loan interest rate",
+        "motorcycle loan interest rate",
+        "scooter loan interest rate",
+        "vehicle loan terms",
+        "bike loan terms",
+        "two wheeler loan terms",
+        "motorcycle loan terms",
+        "scooter loan terms"
+      ],
+      "response": "We offer vehicle loans specifically for bikes and two-wheelers with competitive interest rates and flexible repayment options. You'll need valid ID proof, address proof, income proof, and bike details. The loan amount depends on the bike value and your eligibility. Contact us for current rates and application process.",
+      "refined_keywords": [
+        "vehicle requirements",
+        "two wheeler documents",
+        "vehicle eligibility",
+        "two wheeler financing",
+        "vehicle interest rate",
+        "bike interest rate",
+        "two wheeler interest rate",
+        "bike eligibility",
+        "motorcycle",
+        "motorcycle documents",
+        "scooter financing",
+        "scooter documents",
+        "motorcycle requirements",
+        "bike",
+        "scooter",
+        "vehicle documents",
+        "vehicle terms",
+        "bike financing",
+        "two wheeler",
+        "bike terms",
+        "bike documents",
+        "scooter requirements",
+        "motorcycle terms",
+        "scooter terms",
+        "vehicle",
+        "motorcycle financing",
+        "two wheeler eligibility",
+        "motorcycle eligibility",
+        "scooter eligibility",
+        "motorcycle interest rate",
+        "two wheeler terms",
+        "scooter interest rate",
+        "bike requirements",
+        "two wheeler requirements"
+      ]
     }
   ]
 }

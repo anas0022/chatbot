@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Testing Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .test-section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .test-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .test-input input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .test-input button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .test-input button:hover {
+            transform: translateY(-2px);
+        }
+
+        .results {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .test-case {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .test-case h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .test-case p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .quick-tests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .quick-test-btn {
+            padding: 10px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .quick-test-btn:hover {
+            background: #e0e0e0;
+            transform: translateY(-1px);
+        }
+
+        .response-display {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #28a745;
+        }
+
+        .response-display h4 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .feedback-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .feedback-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .good-btn {
+            background: #28a745;
+            color: white;
+        }
+
+        .bad-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        .improve-btn {
+            background: #ffc107;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Chatbot Testing & Practice Interface</h1>
+            <p>Test your chatbot responses and improve them</p>
+        </div>
+
+        <div class="test-section">
+            <h3>🧪 Test Your Bot</h3>
+            <div class="test-input">
+                <input type="text" id="testInput" placeholder="Type your test message here..." />
+                <button onclick="testResponse()">Test Response</button>
+            </div>
+            
+            <div id="responseDisplay" class="response-display" style="display: none;">
+                <h4>🤖 Bot Response:</h4>
+                <p id="botResponse"></p>
+                
+                <div class="feedback-section">
+                    <h5>💡 Rate this response:</h5>
+                    <div class="feedback-buttons">
+                        <button class="feedback-btn good-btn" onclick="rateResponse('good')">👍 Good</button>
+                        <button class="feedback-btn bad-btn" onclick="rateResponse('bad')">👎 Bad</button>
+                        <button class="feedback-btn improve-btn" onclick="rateResponse('improve')">🔧 Needs Improvement</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>⚡ Quick Test Cases</h3>
+            <div class="quick-tests">
+                <div class="quick-test-btn" onclick="quickTest('hi')">Greeting</div>
+                <div class="quick-test-btn" onclick="quickTest('I want loan')">General Loan</div>
+                <div class="quick-test-btn" onclick="quickTest('vehicle loan')">Vehicle Loan</div>
+                <div class="quick-test-btn" onclick="quickTest('gold loan')">Gold Loan</div>
+                <div class="quick-test-btn" onclick="quickTest('business loan')">Business Loan</div>
+                <div class="quick-test-btn" onclick="quickTest('What documents?')">Documents</div>
+                <div class="quick-test-btn" onclick="quickTest('How to apply?')">Application</div>
+                <div class="quick-test-btn" onclick="quickTest('EMI payment')">EMI</div>
+                <div class="quick-test-btn" onclick="quickTest('Customer care')">Support</div>
+                <div class="quick-test-btn" onclick="quickTest('bye')">Farewell</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Test Results</h3>
+            <div id="testResults" class="results">
+                <p>Start testing to see results here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = [];
+        let currentTest = null;
+
+        function testResponse() {
+            const input = document.getElementById('testInput').value.trim();
+            if (!input) return;
+
+            // Simulate bot response (you can integrate with your actual bot)
+            const response = simulateBotResponse(input);
+            
+            displayResponse(input, response);
+            currentTest = { input, response, timestamp: Date.now() };
+        }
+
+        function quickTest(message) {
+            document.getElementById('testInput').value = message;
+            testResponse();
+        }
+
+        function simulateBotResponse(input) {
+            // This is a simplified version - replace with your actual bot logic
+            const lowerInput = input.toLowerCase();
+            
+            if (lowerInput.includes('hi') || lowerInput.includes('hello')) {
+                return "Hello! Welcome to our banking services. How can I help you today with your loan queries?";
+            }
+            
+            if (lowerInput.includes('vehicle loan') || lowerInput.includes('bike loan')) {
+                return "We offer vehicle loans specifically for bikes and two-wheelers with competitive interest rates and flexible repayment options. You'll need valid ID proof, address proof, income proof, and bike details. The loan amount depends on the bike value and your eligibility. Contact us for current rates and application process.";
+            }
+            
+            if (lowerInput.includes('gold loan')) {
+                return "Yes, we provide gold loans. You'll need valid ID proof, address proof, and gold items to pledge. The loan amount depends on the gold value and purity.";
+            }
+            
+            if (lowerInput.includes('business loan')) {
+                return "You can apply for a business loan through our website, mobile app, or by visiting your nearest branch. Our team will guide you through the entire process.";
+            }
+            
+            if (lowerInput.includes('loan')) {
+                return "We offer business loans, gold loans, and vehicle loans. Which type interests you?";
+            }
+            
+            if (lowerInput.includes('document')) {
+                return "For loan applications, you'll typically need ID proof (Aadhaar/PAN), address proof, income proof, and bank statements.";
+            }
+            
+            if (lowerInput.includes('emi')) {
+                return "I can help you with EMI-related queries. You can check your EMI schedule, pay EMI online, or get information about missed payments.";
+            }
+            
+            if (lowerInput.includes('apply')) {
+                return "You can apply for loans through our website, mobile app, or by visiting your nearest branch.";
+            }
+            
+            if (lowerInput.includes('bye')) {
+                return "Thank you for chatting with us! Have a great day. Feel free to return if you have more questions.";
+            }
+            
+            return "I'm here to help with your loan queries. You can ask me about loan types, application process, EMI details, documents, or contact information. What would you like to know?";
+        }
+
+        function displayResponse(input, response) {
+            document.getElementById('botResponse').textContent = response;
+            document.getElementById('responseDisplay').style.display = 'block';
+        }
+
+        function rateResponse(rating) {
+            if (!currentTest) return;
+            
+            currentTest.rating = rating;
+            testResults.push(currentTest);
+            
+            updateTestResults();
+            
+            // Clear current test
+            currentTest = null;
+            document.getElementById('responseDisplay').style.display = 'none';
+            document.getElementById('testInput').value = '';
+            
+            // Show feedback
+            const messages = {
+                'good': '✅ Response rated as good!',
+                'bad': '❌ Response needs improvement',
+                'improve': '🔧 Response marked for improvement'
+            };
+            
+            alert(messages[rating]);
+        }
+
+        function updateTestResults() {
+            const resultsDiv = document.getElementById('testResults');
+            
+            if (testResults.length === 0) {
+                resultsDiv.innerHTML = '<p>Start testing to see results here...</p>';
+                return;
+            }
+            
+            let html = '<h4>Test Results:</h4>';
+            
+            testResults.forEach((result, index) => {
+                const ratingColor = {
+                    'good': '#28a745',
+                    'bad': '#dc3545',
+                    'improve': '#ffc107'
+                };
+                
+                html += `
+                    <div class="test-case">
+                        <h4>Test ${index + 1}</h4>
+                        <p><strong>Input:</strong> "${result.input}"</p>
+                        <p><strong>Response:</strong> "${result.response}"</p>
+                        <p><strong>Rating:</strong> <span style="color: ${ratingColor[result.rating]}">${result.rating.toUpperCase()}</span></p>
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        // Enter key support
+        document.getElementById('testInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                testResponse();
+            }
+        });
+    </script>
+</body>
+</html> 
