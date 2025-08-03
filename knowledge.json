@@ -290,6 +290,8 @@
     {
       "tag": "interest_rate_cd",
       "keywords": [
+        "cd loan",
+        "cd",
         "interest rate",
         "cd loan interest",
         "certificate of deposit loan",
@@ -907,7 +909,7 @@
         "customer care support number",
         "customer care service number"
       ],
-      "response": "Our customer care is available Monday to Saturday from 9 AM to 6 PM. You can also reach us through our 24/7 toll-free number.",
+      "response": "📞 **Contact Information**\n\nWe're here to help! You can reach our customer support team through:\n\n• **Phone:** 1-800-YOG-LOAN\n• **Email:** support@yogloans.com\n• **Live Chat:** Available 24/7\n• **Business Hours:** Mon-Fri 9AM-6PM EST\n\nFor detailed contact information and office locations, please visit our contact page:\n\n<button onclick=\"window.open('https://yogloans.com/contact', '_blank')\" style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin-top: 12px; font-size: 14px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1);\">🌐 Visit Contact Page</button>\n\n💡 **Quick Tip:** For urgent loan inquiries, call our hotline for immediate assistance!",
       "refined_keywords": [
         "customer care",
         "customer care helpline",
