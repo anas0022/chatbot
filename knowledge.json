@@ -264,7 +264,6 @@
         "loans you provide",
         "loans you give"
       ],
-<<<<<<< HEAD
       "response": "We offer various loan types including business loans, gold loans, CD loans, personal loans, home loans, vehicle loans, and more. Which type interests you?",
       "refined_keywords": [
         "types",
@@ -287,9 +286,6 @@
         "categories",
         "offerings"
       ]
-=======
-      "response": "We offer various loan types including business loans, gold loans, CD loans, vehicle loans. Which type interests you?"
->>>>>>> 2c34c36c256b51428e72b0fe73c12c9f3b9e27d6
     },
     {
       "tag": "interest_rate_cd",
